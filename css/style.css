@@ -1,0 +1,144 @@
+*{
+    padding: 0%;
+    margin:0;
+}
+
+#nav-back{
+    background-image: url("/img/nav-back.jpg");
+    width: 100%;
+    height: 10vh;
+    background-size: cover;
+   /*  opacity: 50%; */
+    position: sticky;
+    top: 0;
+}
+li, ul{
+    list-style: none;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    justify-items: end; 
+}
+.sous-titres{
+    color: white;
+}
+ul.sous-titres{
+    visibility: hidden;
+    height:0;
+    width: fit-content;
+}
+
+ .titre:hover ul.sous-titres{
+        visibility: visible;
+        padding: 0%;
+    }
+#screen-one{
+    background-image: url("/img/screen-one.jpg");
+    width: 100vw;
+    height: 90vh;
+    background-size: cover;
+    background-position: center;
+     align-items: center;
+}
+.screen-one{
+    display: grid;
+   grid-template-rows: 50% 50%;
+   grid-template-columns: 50% 50%;
+   
+}
+p{
+    font-family: 'Space Mono', monospace;
+    color: white;
+    font-size: 2rem;
+}
+.code1{
+    display: flex;
+   justify-content: flex-start;
+}
+.code2{
+    display: flex;
+    justify-content: flex-start;
+}
+.code3{
+    display: flex;
+    justify-content: flex-end;
+}
+.code4{
+    display: flex;
+   justify-content: center;
+} 
+ .screen-one{
+    
+    width: 100vw;
+    height: 100vh;
+    
+}
+#screen-two{
+    background-image: url("/img/screen-two.jpg");
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+#screen-three{
+    background-image: url("/img/screen-three.jpg");
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+#foot-back{
+    background-image: url("/img/foot-back.jpg");
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(3,1fr);
+    justify-content: center;
+    align-items:flex-end;
+    
+}
+
+img{
+  width: 150px;  
+  
+}
+.github{
+    grid-column:1;
+    grid-row:1;
+}
+.gmail{
+    grid-column:2;
+    grid-row:2;
+  
+}
+.linkedin{
+    
+    grid-column:3;
+    grid-row:3;
+   
+}
+.facebook{
+    grid-column:8;
+    grid-row:3;
+    
+}
+.twitter{ 
+    grid-column:9;
+    grid-row:2;
+    }
+.instagram{
+    grid-column:10;
+    grid-row:1;
+  
+}
+.contact{
+    width:50vw;
+    height: 50vh;
+   grid-area: 1/4/3/7; 
+}
