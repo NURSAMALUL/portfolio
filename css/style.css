@@ -2,6 +2,7 @@
     padding: 0%;
     margin:0;
 }
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 
 #nav-back{
     background-image: url("/img/nav-back.jpg");
@@ -11,15 +12,25 @@
    /*  opacity: 50%; */
     position: sticky;
     top: 0;
+      z-index: 1;
 }
 li, ul{
     list-style: none;
+}
+.box{
+    text-decoration: none;
+    color:white;
+    background-color:rgba(0,0,0,0.6);
+    border-radius:6%;
+    backdrop-filter:blur(10px);
+    padding: 10px;
+    font-family: 'Monoton', cursive;
 }
 
 nav{
     display: flex;
     justify-content: space-around;
-    align-items: flex-end;
+    align-items: center;
     justify-items: end; 
 }
 .sous-titres{
@@ -37,17 +48,13 @@ ul.sous-titres{
     }
 #screen-one{
     background-image: url("/img/screen-one.jpg");
-    width: 100vw;
+    width: 100%;
     height: 90vh;
     background-size: cover;
-    background-position: center;
-     align-items: center;
+    background-position: 0%;
+     /* align-items: center; */
 }
 .screen-one{
-    display: grid;
-   grid-template-rows: 50% 50%;
-   grid-template-columns: 50% 50%;
-   
 }
 p{
     font-family: 'Space Mono', monospace;
@@ -57,18 +64,22 @@ p{
 .code1{
     display: flex;
    justify-content: flex-start;
+   padding: 100px;
 }
 .code2{
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
+    padding: 50px;
 }
 .code3{
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    padding: 100px;
 }
 .code4{
     display: flex;
-   justify-content: center;
+   justify-content: flex-end;
+   padding: 100px;
 } 
  .screen-one{
     
@@ -90,6 +101,117 @@ p{
     background-size: cover;
     background-position: center;
 }
+.carousel_wrapper {
+    position: relative;
+    width: 320px;
+    margin: 100px auto 0 auto;
+    perspective: 1000px;
+  }
+  
+  .carousel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateY(-360deg) translateZ(-412px); /* add reverse transformation from the slides */
+    animation: swirl 40s steps(10000, end) infinite; /* run `swirl` animation (defined at end of CSS) infitely, with animation lasting 40 seconds, and 10,000 steps between the FROM and TO values in the animation for a smooth rotation */
+  }
+  
+  .slide {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 300px;
+    height: 187px;
+  }
+  
+  .slide img {
+    width: 280px;
+    height: 400px;
+    border: 3px inset rgba(29, 203, 84, 0.75);
+    /* border-radius: 100%; */
+    box-shadow: 0 0 15px 3px rgba(110, 72, 221, 0.9);
+  }
+  
+  /*#sun {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+    background-image: url('https://chivethebrigade.files.wordpress.com/2012/03/sun-920-32.jpg');
+    background-position: -264px -69px;
+    box-shadow: 0 0 30px 10px orange;
+  }*/
+  
+  /*
+  9 Slides total: 360 Degrees (full circle) --> 360/9 = 40 --> our increment for rotation
+  
+  Some math. Consider how the carousel will be set up. It's going to be a 3D circle, like an orbit. The orientation will be such that it would be like setting a ring down on a table, then bending down and looking at the ring head on from the edge of the table. The main "front" image will be entirely front-facing. The other images will be rotated slightly to make a full circle. You could sketch this out in 2D from a bird's eye view, and you'd end up with a picture like the following:
+  
+  https://cl.ly/image/2P3E1U0W0c29
+  
+  Each triangle/piece would be a slide, hence 9 pieces. That being said, let's do some calculations, but we'll use the dimensions of our elements rather than those in the picture.
+  
+  So, we're rotating all the slides in 40º increments relative to each other, because 360º makes a full circle, and we have 9 elements: 360/9 = 40
+  
+  In the picture above, we want to find the radius of the circle (which isn't exactly a circle because it's made up of triangles). So we can cut each triangle in half and solve for `r` (radius). We can solve for `r` using some geometry and our own elements' dimensions. 
+  
+  The width of the slides is 300px. We're going to split those triangles in half and use the TANGENT function in geometry/trigonemty to solve for `r`. And since we're splitting each of the 9 triangles (the slides) in half for this, we need to account for the fact that our key angle is now going to be 20º and not 40º. We can solve for `r` by taking our smaller triangles' width (150px) and dividing by the tangent of 20º (in degrees, not radians). So:
+  
+              150
+     r =  -----------
+            tan(20º)
+  
+  Here's a screenshot of me doing the calculations in JavaScript, right in the browser console!
+  
+  Math things: https://cl.ly/image/1t0j1V2Y2l2Z
+  
+  So, `r` is (about) 412px long! This means we need to TRANSLATE the slides in the Z 3-dimensional plane by 412px. This should be done AFTER the rotateY transformation.
+  */
+  
+  .slide.one {
+    transform: rotateY(0deg) translateZ(412px);
+    
+  }
+  .slide.two {
+    transform: rotateY(40deg) translateZ(412px);
+  }
+  .slide.three {
+    transform: rotateY(80deg) translateZ(412px);
+  }
+  .slide.four {
+    transform: rotateY(120deg) translateZ(412px);
+  }
+  .slide.five {
+    transform: rotateY(160deg) translateZ(412px);
+  }
+  .slide.six {
+    transform: rotateY(200deg) translateZ(412px);
+  }
+  .slide.seven {
+    transform: rotateY(240deg) translateZ(412px);
+  }
+  .slide.eight {
+    transform: rotateY(280deg) translateZ(412px);
+  }
+  .slide.nine {
+    transform: rotateY(320deg) translateZ(412px);
+  }
+  
+  /*
+  CSS3 ANIMATION
+  -------------------
+  Simply rotates the carousel around the Y axis by using rotateY and starting at initial value, -360º, and going to final value 0º, then resetting.
+  */
+  
+  @keyframes swirl {   
+    from {
+      transform: rotateY(-360deg);
+    }
+    to {
+      transform: rotateY(0deg);
+    }
+  } 
 #foot-back{
     background-image: url("/img/foot-back.jpg");
     width: 100vw;
@@ -105,37 +227,40 @@ p{
 }
 
 img{
-  width: 150px;  
+   
   
 }
 .github{
     grid-column:1;
     grid-row:1;
+    width: 150px; 
 }
 .gmail{
     grid-column:2;
     grid-row:2;
+    width: 150px; 
   
 }
 .linkedin{
     
     grid-column:3;
     grid-row:3;
-   
+    width: 150px; 
 }
 .facebook{
     grid-column:8;
     grid-row:3;
-    
+    width: 150px; 
 }
 .twitter{ 
     grid-column:9;
     grid-row:2;
+    width: 150px; 
     }
 .instagram{
     grid-column:10;
     grid-row:1;
-  
+    width: 150px; 
 }
 .contact{
     width:50vw;
